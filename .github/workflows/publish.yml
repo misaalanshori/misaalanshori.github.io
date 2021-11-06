@@ -31,8 +31,8 @@ jobs:
       - name: Build
         run: npm run buildstatic # The build command of your project
 
-      - name: copy submodules to out
-        run: cp projects/ out/ -r
+      # - name: copy submodules to out
+      #   run: cp projects/ out/ -r
     
       - name: Push
         uses: s0/git-publish-subdir-action@develop
