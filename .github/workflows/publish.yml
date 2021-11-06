@@ -36,6 +36,8 @@ jobs:
 
       - name: copy submodules to out
         run: cp projects/ out/ -r
+
+      - name: delete git from project folders
         run: rm out/projects/*/.git -r
     
       - name: Push
