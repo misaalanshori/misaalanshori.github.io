@@ -20,8 +20,20 @@ jobs:
       - name: Pulls submodules
         run: git submodule update --init --recursive
 
+      - name: 'DEBUG: list repo'
+        run: ls -a
+
+      - name: 'DEBUG: list projects'
+        run: ls projects
+
+      - name: 'DEBUG: list projects contents'
+        run: ls -a
+
       - name: deinit repository
         run: rm .git -r
+
+      - name: 'DEBUG: list deinit repo'
+        run: ls -a
 
       - name: remove git file from submodule
         run: 'rm projects/*/.git'
@@ -43,6 +55,15 @@ jobs:
       - name: copy submodules to out
         run: 'cp projects/ out/ -r'
     
+      - name: 'DEBUG: list out folder'
+        run: ls out -a
+
+      - name: 'DEBUG: list out/projects folder'
+        run: ls out/projects -a
+
+      - name: 'DEBUG: list out/projects/* folder'
+        run: ls out/projects/* -a  
+
       - name: Push
         uses: s0/git-publish-subdir-action@develop
         env:
