@@ -27,6 +27,11 @@ jobs:
       - name: get GDSC-Website-List-Movie
         run: git clone https://github.com/misaalanshori/GDSC-Website-List-Movie
 
+      - name: 'DEBUG: list projects'
+        run: ls
+
+      - name: 'DEBUG: list projects/*'
+        run: ls *
 
       - name: deinit repositories
         run: rm -rf */.git -r
