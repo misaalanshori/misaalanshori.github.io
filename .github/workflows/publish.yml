@@ -20,12 +20,13 @@ jobs:
       - name: Pulls submodules
         run: git submodule update --init --recursive
 
-    
+      - name: make and get into projects folder
+        run: mkdir public/projects && cd public/projects
+
+
       - name: get GDSC-Website-List-Movie
-        uses: actions/checkout@v2
-        with:
-          repository: misaalanshori/GDSC-Website-List-Movie
-          path: public/projects/GDSC-Website-List-Movie
+        run: 'REPO=GDSC-Website-List-Movie; wget https://codeload.github.com/misaalanshori/$REPO/zip/refs/heads/master; unzip master; mv $REPO-master $REPO'
+
 
       - name: 'DEBUG: list projects'
         run: ls
@@ -34,8 +35,10 @@ jobs:
         run: ls *
 
       - name: deinit repositories
-        run: rm -rf public/projets/*/.git -r
+        run: rm -rf */.git -r
 
+      - name: going back
+        run: cd ../..
 
       - name: 'DEBUG: ls public projects'
         run: ls public/projects
