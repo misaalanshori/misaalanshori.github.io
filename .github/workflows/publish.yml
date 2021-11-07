@@ -20,17 +20,8 @@ jobs:
       - name: Pulls submodules
         run: git submodule update --init --recursive
 
-      - name: 'DEBUG: list repo'
-        run: ls -a
-
-      - name: 'DEBUG: list projects'
-        run: ls projects
-
-      - name: 'DEBUG: list projects contents'
-        run: ls -a
-
-      - name: remove git file from submodule
-        run: 'rm projects/*/.git'
+      - name: copy projects to public folder
+        run: cp projects/ public/ -r
 
       - name: get node
         uses: actions/setup-node@v2
@@ -43,33 +34,15 @@ jobs:
       - name: Build
         run: npm run buildstatic # The build command of your project
         
-      - name: touching .nojekkyl
+      - name: touching .nojekyll
         run: touch out/.nojekyll
       
-
-      - name: create folder for branch
-        run: mkdir ../ghpages
-
-      - name: copy out to folder
-        run: cp out/* ../ghpages/ -r
-
-      - name: copy submodules to folder
-        run: 'cp projects/ ../ghpages -r'
-    
-      - name: 'DEBUG: list out folder'
-        run: ls ../ghpages -a
-
-      - name: 'DEBUG: list out/projects folder'
-        run: ls ../ghpages/projects -a
-
-      - name: 'DEBUG: list out/projects/* folder'
-        run: ls ../ghpages/projects/* -a  
 
       - name: Push
         uses: s0/git-publish-subdir-action@develop
         env:
           REPO: self
           BRANCH: gh-pages # The branch name where you want to push the assets
-          FOLDER: ../ghpages # The directory where your assets are generated
+          FOLDER: out # The directory where your assets are generated
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
           MESSAGE: "Build: ({sha})" # The commit message
