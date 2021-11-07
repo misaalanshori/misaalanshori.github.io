@@ -68,12 +68,13 @@ jobs:
         with:
           ref: gh-pages
           path: ghpg
-          
+
       - name: push to the other branch
         run: |
           ls
           rm $GITHUB_WORKSPACE/ghpg/* -r
-          rm $GITHUB_WORKSPACE/ghpg/.*
+          rm $GITHUB_WORKSPACE/ghpg/.* || true
+          rm $GITHUB_WORKSPACE/ghpg/.github || true
           cp $GITHUB_WORKSPACE/out/* $GITHUB_WORKSPACE/ghpg -r
           cd $GITHUB_WORKSPACE/ghpg
           git config user.name github-actions
