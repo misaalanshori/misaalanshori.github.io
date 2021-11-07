@@ -7,7 +7,7 @@ on:
     branches:
       - main
   # schedule:
-  #   - cron:  '*/30 * * * *'
+  #   - cron:  '*/30 * * * *' # enable this when adding dynamic content
 
 jobs:
   build:
@@ -20,11 +20,19 @@ jobs:
       - name: Pulls submodules
         run: git submodule update --init --recursive
 
-      - name: copy projects to public folder
-        run: cp projects/ public/ -r
+      - name: make and get into projects folder
+        run: mkdir public/projects && cd public/projects
 
-      - name: remove git from projects
-        run: rm public/projects/*/.git -r
+
+      - name: get GDSC-Website-List-Movie
+       run: git clone https://github.com/misaalanshori/GDSC-Website-List-Movie
+
+
+      - name: deinit repositories
+        run: rm -rf */.git -r
+
+      - name: going back
+        run: cd ../..
 
       - name: get node
         uses: actions/setup-node@v2
