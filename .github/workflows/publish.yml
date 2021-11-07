@@ -25,7 +25,7 @@ jobs:
 
 
       - name: get GDSC-Website-List-Movie
-       run: git clone https://github.com/misaalanshori/GDSC-Website-List-Movie
+        run: git clone https://github.com/misaalanshori/GDSC-Website-List-Movie
 
 
       - name: deinit repositories
