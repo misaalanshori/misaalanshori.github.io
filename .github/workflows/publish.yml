@@ -48,14 +48,14 @@ jobs:
       - name: touching .nojekyll
         run: touch out/.nojekyll
       
-      - name: "DEBUG: ls out"
+      - name: 'DEBUG: ls out'
         run: ls out
 
-      - name: "DEBUG: ls out/projects"
+      - name: 'DEBUG: ls out/projects'
         run: ls out/projects
 
-      - name: "DEBUG: ls out/projects/*"
-        run: ''ls out/projects/*'
+      - name: 'DEBUG: ls out/projects/*'
+        run: 'ls out/projects/*'
 
       - name: Push
         uses: s0/git-publish-subdir-action@develop
