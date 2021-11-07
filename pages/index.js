@@ -25,6 +25,8 @@ export default function Home() {
           <p className="text-gray-400 text-sm">Hello! I am</p>
           <p className="text-3xl font-bold mb-1 mt-1 text-gray-300 filter drop-shadow-2xl">Muhammad Isa Al Anshori</p>
           <p className="text-gray-400 text-sm">Software Engineering Student</p>
+          <LinkButtons url="https://github.com/misaalanshori" newtab="1" text="Github"/>
+          <LinkButtons url="https://www.linkedin.com/in/muhammad-isa-al-anshori-876ba5193" newtab="1" text="LinkedIn"/>
           <LinkButtons url="https://instagram.com/misaalanshori" newtab="1" text="Instagram"/>
           <LinkButtons url="https://twitter.com/misaalanshori03" newtab="1" text="Twitter"/>
           <LinkButtons url="https://www.youtube.com/misaalanshori" newtab="1" text="Youtube"/>
