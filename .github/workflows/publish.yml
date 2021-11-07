@@ -7,7 +7,7 @@ on:
     branches:
       - main
   schedule:
-    - cron:  '*/15 * * * *'
+    - cron:  '*/30 * * * *'
 
 jobs:
   build:
@@ -19,6 +19,12 @@ jobs:
 
       - name: Pulls submodules
         run: git submodule update --init --recursive
+
+      - name: deinit repository
+        run: rm .git -r
+
+      - name: remove git file from submodule
+        run: 'rm projects/*/.git'
 
       - name: get node
         uses: actions/setup-node@v2
@@ -35,7 +41,7 @@ jobs:
         run: touch out/.nojekyll
 
       - name: copy submodules to out
-        run: 'cp projects/ out/ -r && rm out/projects/*/.git -r && ls out && ls out/projects && ls out/projects/*'
+        run: 'cp projects/ out/ -r'
     
       - name: Push
         uses: s0/git-publish-subdir-action@develop
