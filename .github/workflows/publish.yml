@@ -29,12 +29,6 @@ jobs:
       - name: 'DEBUG: list projects contents'
         run: ls -a
 
-      - name: deinit repository
-        run: rm .git -r
-
-      - name: 'DEBUG: list deinit repo'
-        run: ls -a
-
       - name: remove git file from submodule
         run: 'rm projects/*/.git'
 
@@ -72,3 +66,4 @@ jobs:
           FOLDER: out # The directory where your assets are generated
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
           MESSAGE: "Build: ({sha})" # The commit message
+          CLEAR_GLOBS_FILE: '.cleartarget'
