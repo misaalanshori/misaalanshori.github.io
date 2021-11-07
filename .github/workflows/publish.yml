@@ -21,25 +21,12 @@ jobs:
         run: git submodule update --init --recursive
 
       - name: make and get into projects folder
-        run: mkdir public/projects && cd public/projects
+        run: mkdir public/projects
 
 
       - name: get GDSC-Website-List-Movie
-        run: 'REPO=GDSC-Website-List-Movie; wget https://codeload.github.com/misaalanshori/$REPO/zip/refs/heads/master; unzip master; mv $REPO-master $REPO'
-
-
-      - name: 'DEBUG: list projects'
-        run: ls
-
-      - name: 'DEBUG: list projects/*'
-        run: ls *
-
-      - name: deinit repositories
-        run: rm -rf */.git -r
-
-      - name: going back
-        run: cd ../..
-
+        run: 'REPO=GDSC-Website-List-Movie; cd public/projects; wget https://codeload.github.com/misaalanshori/$REPO/zip/refs/heads/master; unzip master; mv $REPO-master $REPO'
+        
       - name: 'DEBUG: ls public projects'
         run: ls public/projects
       
