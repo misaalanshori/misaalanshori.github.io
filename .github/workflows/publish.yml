@@ -25,8 +25,8 @@ jobs:
 
 
       - name: get GDSC-Website-List-Movie
-        run: 'REPO=GDSC-Website-List-Movie; cd public/projects; wget https://codeload.github.com/misaalanshori/$REPO/zip/refs/heads/master; unzip master; mv $REPO-master $REPO'
-        
+        run: 'REPO=GDSC-Website-List-Movie; cd public/projects; wget https://codeload.github.com/misaalanshori/$REPO/zip/refs/heads/master; unzip master; mv $REPO-master $REPO'; rm master
+
       - name: 'DEBUG: ls public projects'
         run: ls public/projects
       
