@@ -23,6 +23,9 @@ jobs:
       - name: copy projects to public folder
         run: cp projects/ public/ -r
 
+      - name: remove git from projects
+        run: rm public/projects/*/.git -r
+
       - name: get node
         uses: actions/setup-node@v2
         with:
