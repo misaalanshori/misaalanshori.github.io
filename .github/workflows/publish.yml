@@ -63,11 +63,13 @@ jobs:
       - name: 'DEBUG: ls out/projects/*'
         run: 'ls out/projects/*'
 
-      - name: Push to other branch
+      - name: checkout the other branch
         uses: actions/checkout@v2
         with:
           ref: gh-pages
           path: ghpg
+          
+      - name: push to the other branch
         run: |
           ls
           rm $GITHUB_WORKSPACE/ghpg/* -r
