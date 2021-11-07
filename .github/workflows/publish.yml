@@ -88,6 +88,7 @@ jobs:
           ls $GITHUB_WORKSPACE/ghpg
           cp $GITHUB_WORKSPACE/out/* $GITHUB_WORKSPACE/ghpg -r
           cd $GITHUB_WORKSPACE/ghpg
+          touch .nojekyll
           git add .
           git commit -m "generated from commit: $(cd $GITHUB_WORKSPACE; git rev-parse HEAD)"
           git push
