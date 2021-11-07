@@ -7,7 +7,7 @@ on:
     branches:
       - main
   # schedule:
-  #   - cron:  '*/30 * * * *' # enable this when adding dynamic content
+  #   - cron:  '*/30 * * * *' # reenable this when adding dynamic content
 
 jobs:
   build:
@@ -48,6 +48,14 @@ jobs:
       - name: touching .nojekyll
         run: touch out/.nojekyll
       
+      - name: "DEBUG: ls out"
+        run: ls out
+
+      - name: "DEBUG: ls out/projects"
+        run: ls out/projects
+
+      - name: "DEBUG: ls out/projects/*"
+        run: ''ls out/projects/*'
 
       - name: Push
         uses: s0/git-publish-subdir-action@develop
