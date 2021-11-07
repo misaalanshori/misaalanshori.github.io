@@ -25,7 +25,13 @@ jobs:
 
 
       - name: get GDSC-Website-List-Movie
-        run: 'REPO=GDSC-Website-List-Movie; cd public/projects; wget https://codeload.github.com/misaalanshori/$REPO/zip/refs/heads/master; unzip master; mv $REPO-master $REPO; rm master'
+        run: |
+          REPO=GDSC-Website-List-Movie
+          cd public/projects
+          wget https://codeload.github.com/misaalanshori/$REPO/zip/refs/heads/master
+          unzip master
+          mv $REPO-master $REPO
+          rm master
 
       - name: 'DEBUG: ls public projects'
         run: ls public/projects
@@ -57,11 +63,19 @@ jobs:
       - name: 'DEBUG: ls out/projects/*'
         run: 'ls out/projects/*'
 
-      - name: Push
-        uses: s0/git-publish-subdir-action@develop
-        env:
-          REPO: self
-          BRANCH: gh-pages # The branch name where you want to push the assets
-          FOLDER: out # The directory where your assets are generated
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
-          MESSAGE: "Build: ({sha})" # The commit message
+      - name: Push to other branch
+        uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+          path: ghpg
+        run: |
+          ls
+          rm $GITHUB_WORKSPACE/ghpg/* -r
+          rm $GITHUB_WORKSPACE/ghpg/.*
+          cp $GITHUB_WORKSPACE/out/* $GITHUB_WORKSPACE/ghpg -r
+          cd $GITHUB_WORKSPACE/ghpg
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "generated from commit: $(cd $GITHUB_WORKSPACE; git rev-parse HEAD)"
+          git push
