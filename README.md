@@ -7,3 +7,7 @@ The plan is to use NextJS to do a static site generation on Github Actions and t
 - TailwindCSS
 - Github Actions
 - Github Pages
+
+## Pages
+[Home](https://misaalanshori.github.io/)
+[Covid-id](https://misaalanshori.github.io/covid-id)
