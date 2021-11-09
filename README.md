@@ -9,5 +9,6 @@ The plan is to use NextJS to do a static site generation on Github Actions and t
 - Github Pages
 
 ## Pages
-[Home](https://misaalanshori.github.io/)
-[Covid-id](https://misaalanshori.github.io/covid-id)
+- [Home](https://misaalanshori.github.io/)
+- [Covid-id](https://misaalanshori.github.io/covid-id)
+- [GDSC-Website-List-Movie](https://github.com/misaalanshori/GDSC-Website-List-Movie)
