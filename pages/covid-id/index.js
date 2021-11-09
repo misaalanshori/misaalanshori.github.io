@@ -4,8 +4,8 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 
 function Datablocks({text, value, color, increase}) {
     return (
-        <div className={`bg-${color}-400 ring-2 ring-${color}-500 rounded-lg px-3 py-2 w-40 h-3/6 mx-2 mt-3`} >
-            <h3 className="text-gray-800 text-lg font-bold">{text}</h3>
+        <div className={`bg-${color}-400 ring-2 ring-${color}-500 rounded-lg px-3 py-4 w-44 h-3/6 mx-2 mt-3`} >
+            <h3 className="text-gray-800 text-xl font-bold pb-1">{text}</h3>
             <h5 className="text-xl text-gray-700 font-semibold inline">{value}</h5>
             <span className="text-gray-600 font-medium"> ({increase<0 ? "" : "+"}{increase})</span>
         </div>
