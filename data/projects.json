@@ -22,6 +22,7 @@
     "projects":{
         "homepage": {
             "title": "This Website",
+            "key": "homepage",
             "type": "software-website",
             "desc": {
                 "en": "This website you are currently viewing is the latest version of my website. Made with very simple and minimalistic design and utilizing many modern frameworks like NextJS, ReactJS, and TailwindCSS. This website is deployed to Github Pages using Github Actions to allow dynamic content while keeping the cost at virtually zero",
@@ -40,6 +41,7 @@
         },
         "covid-id": {
             "title": "Covid-ID",
+            "key": "covid-id",
             "type": "software-website",
             "desc": {
                 "en": "Covid-ID is a website that shows some statistics about the Covid-19 pandemic. The original version of this website was written in pure PHP and used a combination of APIs and web scraping, it was poorly written which has caused it to break. This new version is made using the same modern frameworks and technology as my homepage and uses the official API from the Indonesian Goverment, which means it looks much better and also a lot more stable.",
