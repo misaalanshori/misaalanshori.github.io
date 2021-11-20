@@ -1,5 +1,5 @@
 {
-"title": "Making a dynamic-static website with NextJS on Github Pages using Github Actions",
+"title": "Make a static website dynamic with NextJS on Github Pages",
 "writer": "Muhammad Isa Al Anshori",
 "publishedDate": "17 November 2021",
 "editedDate": "17 November 2021",

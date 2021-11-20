@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 
 function PostItem({data}) {
     
@@ -23,16 +24,20 @@ export default function blogPostList({blogList}) {
                 <meta name="description" content="Hello :)" />
                 <link rel="icon" href="/favicon.png" />
             </Head>
-            <div id="frontpage" className="px-10 min-h-screen bg-gray-700 py-6 flex flex-col justify-center sm:py-12">
-                <h1 className="text-gray-100 text-9xl text-center mb-8">Blog Posts</h1>
-                {blogList.map((element) => <PostItem data={element}/>)}
+            <div id="bloglist" className="px-10 min-h-screen bg-gray-700 py-6 flex flex-col justify-center sm:py-12">
+                <div className="w-full md:w-7/12 self-center opacity-60">
+                    <Link href="/">Back to Homepage</Link>
+                </div>
+                
+                <h1 className="text-gray-100 text-8xl text-center mb-8">Blog Posts</h1>
+                {blogList.map((element) => <PostItem key={element.slug} data={element}/>)}
             </div>
         </div>
         
     )
 }
 
-export function getStaticProps() {
+export async function getStaticProps() {
     const fs = require("fs")
     const blogList = fs.readdirSync("data/blog/posts/").map((element) => {
         const bPost = fs.readFileSync("data/blog/posts/" + element).toString().split("@==contentstartshere==@")

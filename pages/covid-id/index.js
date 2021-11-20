@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
+
 function Datablocks({text, value, color, increase}) {
     return (
         <div className={`bg-${color}-400 ring-2 ring-${color}-500 rounded-lg px-3 py-4 w-44 h-3/6 mx-2 mt-3`} >
