@@ -28,7 +28,7 @@
                 "en": "This website you are currently viewing is the latest version of my website. Made with very simple and minimalistic design and utilizing many modern frameworks like NextJS, ReactJS, and TailwindCSS. This website is deployed to Github Pages using Github Actions to allow dynamic content while keeping the cost at virtually zero",
                 "id": "Website yang sedang anda lihat ini adalah versi terbaru dari website saya. Dibuat dengan desain yang sederhana dan minimalis dan juga menggunakan berbagai framework modern seperti NextJS, ReactJS, dan TailwindCSS. Website ini di-deploy pada Github Pages menggunakan Github Actions untuk membuat konten dinamis dengan biaya yang hampir nol"
             },
-            "url": "https://misaalanshori.github.io",
+            "url": "/",
             "githuburl": "https://github.com/misaalanshori/misaalanshori.github.io",
             "blogpost": "",
             "photos": [],
@@ -47,7 +47,7 @@
                 "en": "Covid-ID is a website that shows some statistics about the Covid-19 pandemic. The original version of this website was written in pure PHP and used a combination of APIs and web scraping, it was poorly written which has caused it to break. This new version is made using the same modern frameworks and technology as my homepage and uses the official API from the Indonesian Goverment, which means it looks much better and also a lot more stable.",
                 "id": "Covid-ID adalah sebuah website yang menampilkan beberapa statistik mengenai pandemi Covid-19. Versi pertama dari website ini dibuat dengan PHP murni dan menggunakan kombinasi API dan juga webscraping, versi lama ini tidak dibuat dengan baik dan menyebabkannya untuk rusak. Versi baru ini dibuat dengan framework dan teknologi modern yang sama dengan homepage saya dan menggunakan API resmi dari pemerintah Indonesia, sehingga terlihat lebih bagus dan jauh lebih stabil"
             },
-            "url": "https://misaalanshori.github.io/covid-id",
+            "url": "/covid-id",
             "githuburl": "https://github.com/misaalanshori/misaalanshori.github.io",
             "blogpost": "",
             "photos": [],

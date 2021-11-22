@@ -1,6 +1,12 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
+
+export const config = {
+    unstable_runtimeJS: false
+  };
+
+
 function PostItem({data}) {
     
     return (
@@ -22,7 +28,7 @@ export default function blogPostList({blogList}) {
             <Head>
                 <title>Blog Posts</title>
                 <meta name="description" content="Hello :)" />
-                <link rel="icon" href="/favicon.png" />
+                <link rel="icon" href="/favicon.ico" />
             </Head>
             <div id="bloglist" className="px-10 min-h-screen bg-gray-700 py-6 flex flex-col justify-center sm:py-12">
                 <div className="w-full md:w-7/12 self-center opacity-60">

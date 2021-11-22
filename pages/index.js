@@ -93,7 +93,7 @@ export default function Home({featuredProjects, blogPinnedList}) {
 
         
       </div>
-      <div id="myprojects" className="px-10 min-h-screen bg-gray-700 py-6 flex flex-col sm:flex-row justify-center sm:py-12">
+      <div id="pinnedblogs" className="px-10 min-h-screen bg-gray-700 py-6 flex flex-col sm:flex-row justify-center sm:py-12">
 
           <div className="flex flex-col justify-center text-center sm:text-left w-full">
             <p className="text-4xl lg:text-6xl font-bold mb-1 mt-1 text-gray-300 filter drop-shadow-2xl">{"Check out what I'm working on"}</p>
