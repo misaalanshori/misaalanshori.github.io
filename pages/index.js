@@ -61,8 +61,8 @@ export default function Home({featuredProjects, blogPinnedList}) {
             <LinkButtons unhideDelay={100} url="https://instagram.com/misaalanshori" newtab="1" text="Instagram"/>
             <LinkButtons unhideDelay={150} url="https://twitter.com/misaalanshori03" newtab="1" text="Twitter"/>
             <LinkButtons unhideDelay={200} url="https://www.youtube.com/misaalanshori" newtab="1" text="Youtube"/>
-            <LinkButtons unhideDelay={250} url="https://wordpress.adminispwd.com" newtab="1" text="Wordpress"/>
-            <LinkButtons unhideDelay={300} url="/posts" newtab="1" text="Blog"/>
+            {/* <LinkButtons unhideDelay={250} url="https://wordpress.adminispwd.com" newtab="1" text="Wordpress"/> */}
+            <LinkButtons unhideDelay={250} url="/posts" newtab="1" text="Blog"/>
           </TrackVisibility>
           
         </div>
