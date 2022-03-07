@@ -65,6 +65,14 @@ jobs:
       - name: 'DEBUG: ls out/projects/*'
         run: 'ls out/projects/*'
 
+      - name: delete MAIN
+        run: |
+          echo ================
+          rm $GITHUB_WORKSPACE/* -r || true
+          rm $GITHUB_WORKSPACE/.* -r || true
+          rm $GITHUB_WORKSPACE/.github -r || true
+          echo ================
+
       - name: checkout the other branch
         uses: actions/checkout@v2
         with:
