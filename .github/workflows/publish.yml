@@ -97,5 +97,5 @@ jobs:
           cd $GITHUB_WORKSPACE/ghpg
           touch .nojekyll
           git add .
-          git commit -m "generated from commit: $(cd $GITHUB_WORKSPACE; git rev-parse HEAD)"
+          git commit -m "generated automatically"
           git push
