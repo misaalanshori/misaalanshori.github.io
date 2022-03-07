@@ -75,7 +75,7 @@ jobs:
         run: |
           ls $GITHUB_WORKSPACE/ghpg
           echo ================
-          rm $GITHUB_WORKSPACE/ghpg/* -r
+          rm $GITHUB_WORKSPACE/ghpg/* -r || true
           rm $GITHUB_WORKSPACE/ghpg/.* || true
           rm $GITHUB_WORKSPACE/ghpg/.github || true
           echo ================
