@@ -90,6 +90,10 @@ jobs:
           git commit -m "clean up"
           git push
           echo ================
+          echo ================
+          rm $GITHUB_WORKSPACE/.* -r || true
+          rm $GITHUB_WORKSPACE/.github -r || true
+          echo ================
           echo "Commit files"
           git show
           ls $GITHUB_WORKSPACE/ghpg
@@ -97,6 +101,9 @@ jobs:
           cp $GITHUB_WORKSPACE/out/* $GITHUB_WORKSPACE/ghpg -r
           cd $GITHUB_WORKSPACE/ghpg
           touch .nojekyll
+          ls -a
+          echo "--=--"
+          ls .. -a
           git add .
           git commit -m "generated automatically"
           git push
