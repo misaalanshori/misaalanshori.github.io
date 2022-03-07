@@ -3,11 +3,11 @@ name: Generate a build and push to another branch
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-  schedule:
-      - cron: '43 */6 * * *' # every 6hr (+43min)
+  # push:
+  #   branches:
+  #     - main
+  # schedule:
+  #     - cron: '43 */6 * * *' # every 6hr (+43min)
   #   - cron: '43 */2 * * *' # every 2hr (+43min)
   #   - cron:  '*/30 * * * *' # every 30 mins
 
@@ -87,7 +87,7 @@ jobs:
           rm $GITHUB_WORKSPACE/ghpg/.* -r || true
           rm $GITHUB_WORKSPACE/ghpg/.github -r || true
           echo ================
-          ls $GITHUB_WORKSPACE/ghpg
+          du $GITHUB_WORKSPACE
           echo $GITHUB_WORKSPACE/ghpg/*
           echo "--=--"
           cd $GITHUB_WORKSPACE/ghpg
