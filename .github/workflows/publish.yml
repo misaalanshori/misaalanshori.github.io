@@ -91,7 +91,7 @@ jobs:
           git push
           echo ================
           echo "Commit files"
-          git checkout gh-pages
+          git show
           ls $GITHUB_WORKSPACE/ghpg
           echo "--=--"
           cp $GITHUB_WORKSPACE/out/* $GITHUB_WORKSPACE/ghpg -r
