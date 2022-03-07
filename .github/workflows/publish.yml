@@ -85,6 +85,7 @@ jobs:
           cd $GITHUB_WORKSPACE/ghpg
           git config user.name github-actions
           git config user.email github-actions@github.com
+          touch $(date +%s%N)
           git add .
           git commit -m "clean up"
           git push
