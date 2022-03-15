@@ -3,13 +3,13 @@ name: Generate a build and push to another branch
 
 on:
   workflow_dispatch:
-  # push:
-  #   branches:
-  #     - main
-  # schedule:
-  #     - cron: '43 */6 * * *' # every 6hr (+43min)
-  #   - cron: '43 */2 * * *' # every 2hr (+43min)
-  #   - cron:  '*/30 * * * *' # every 30 mins
+  push:
+    branches:
+      - main
+  schedule:
+      - cron: '43 */6 * * *' # every 6hr (+43min)
+    # - cron: '43 */2 * * *' # every 2hr (+43min)
+    # - cron:  '*/30 * * * *' # every 30 mins
 
 jobs:
   build:
@@ -35,13 +35,6 @@ jobs:
           mv $REPO-master $REPO
           rm master
 
-      - name: 'DEBUG: ls public projects'
-        run: ls public/projects
-      
-      - name: 'DEBUG: ls public projects *'
-        run: ls public/projects/*
-
-
       - name: get node
         uses: actions/setup-node@v2
         with:
@@ -55,63 +48,12 @@ jobs:
         
       - name: touching .nojekyll
         run: touch out/.nojekyll
-      
-      - name: 'DEBUG: ls out'
-        run: ls out
 
-      - name: 'DEBUG: ls out/projects'
-        run: ls out/projects
-
-      - name: 'DEBUG: ls out/projects/*'
-        run: 'ls out/projects/*'
-
-      - name: delete MAIN
-        run: |
-          echo ================
-          rm $GITHUB_WORKSPACE/* -r || true
-          rm $GITHUB_WORKSPACE/.* -r || true
-          rm $GITHUB_WORKSPACE/.github -r || true
-          echo ================
-
-      - name: checkout the other branch
-        uses: actions/checkout@v2
-        with:
-          ref: gh-pages
-          path: ghpg
-
-      - name: push to the other branch
-        run: |
-          ls $GITHUB_WORKSPACE/ghpg
-          echo ================
-          rm $GITHUB_WORKSPACE/ghpg/* -r || true
-          rm $GITHUB_WORKSPACE/ghpg/.* -r || true
-          rm $GITHUB_WORKSPACE/ghpg/.github -r || true
-          echo ================
-          du $GITHUB_WORKSPACE
-          echo $GITHUB_WORKSPACE/ghpg/*
-          echo "--=--"
-          cd $GITHUB_WORKSPACE/ghpg
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          touch $(date +%s%N)
-          git add .
-          git commit -m "clean up"
-          git push
-          echo ================
-          echo ================
-          rm $GITHUB_WORKSPACE/.* -r || true
-          rm $GITHUB_WORKSPACE/.github -r || true
-          echo ================
-          echo "Commit files"
-          git show
-          ls $GITHUB_WORKSPACE/ghpg
-          echo "--=--"
-          cp $GITHUB_WORKSPACE/out/* $GITHUB_WORKSPACE/ghpg -r
-          cd $GITHUB_WORKSPACE/ghpg
-          touch .nojekyll
-          ls -a
-          echo "--=--"
-          ls .. -a
-          git add .
-          git commit -m "generated automatically"
-          git push
+      - name: Push
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: gh-pages # The branch name where you want to push the assets
+          FOLDER: out # The directory where your assets are generated
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
+          MESSAGE: "Build: ({sha}) {msg}" # The commit message
