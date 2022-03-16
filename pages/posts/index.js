@@ -28,7 +28,7 @@ export default function blogPostList({blogList}) {
             <Head>
                 <title>Blog Posts</title>
                 <meta name="description" content="Hello :)" />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" type="image/png" href="/favicon.png"/>
             </Head>
             <div id="bloglist" className="px-10 min-h-screen bg-gray-700 py-6 flex flex-col justify-center sm:py-12">
                 <div className="w-full md:w-7/12 self-center opacity-60">

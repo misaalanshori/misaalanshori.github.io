@@ -47,7 +47,7 @@ export default function Home({featuredProjects, blogPinnedList}) {
       <Head>
         <title>Welcome!</title>
         <meta name="description" content="Hello :)" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" href="/favicon.png"/>
       </Head>
 
       <div id="frontpage" className="px-10 min-h-screen bg-gray-700 py-6 flex flex-col justify-center sm:py-12">
@@ -61,7 +61,6 @@ export default function Home({featuredProjects, blogPinnedList}) {
             <LinkButtons unhideDelay={100} url="https://instagram.com/misaalanshori" newtab="1" text="Instagram"/>
             <LinkButtons unhideDelay={150} url="https://twitter.com/misaalanshori03" newtab="1" text="Twitter"/>
             <LinkButtons unhideDelay={200} url="https://www.youtube.com/misaalanshori" newtab="1" text="Youtube"/>
-            {/* <LinkButtons unhideDelay={250} url="https://wordpress.adminispwd.com" newtab="1" text="Wordpress"/> */}
             <LinkButtons unhideDelay={250} url="/posts" newtab="1" text="Blog"/>
           </TrackVisibility>
           

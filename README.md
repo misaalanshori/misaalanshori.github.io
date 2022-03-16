@@ -12,7 +12,7 @@ Visit the page here (Now hosted on [Vercel](https://vercel.com/)): [adminispwd.c
 
 ### Things I kinda regret using
 - NextJS
-- Github Pages
+- Github Actions (Its just not really made for this)
 
 ## Pages
 - [Home](https://adminispwd.com/)

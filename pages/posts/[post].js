@@ -16,7 +16,7 @@ export default function blogPost({postMetadata, postContents}) {
             <Head>
                 <title>{postMetadata.title}</title>
                 <meta name="description" content="Hello :)" />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" type="image/png" href="/favicon.png"/>
             </Head>
             <div id="blogpost" className="px-10 min-h-screen bg-gray-700 py-6 flex flex-col justify-center sm:py-12">
                 <div className="w-5/6 md:w-7/12 self-center opacity-60">
