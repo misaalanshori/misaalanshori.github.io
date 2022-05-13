@@ -17,7 +17,8 @@
 
     "featured":[
         "homepage",
-        "covid-id"
+        "covid-id",
+        "todoList"
     ],
     "projects":{
         "homepage": {
@@ -57,6 +58,25 @@
             "tags": ["website","web development","nodejs","nextjs","reactjs", "tailwindcss", "covid", "health", "API"],
             "datecreated": "8 November 2021",
             "dateadded": "9 November 2021"
+        },
+        "todoList": {
+            "title": "Todo List",
+            "key": "todoList",
+            "type": "software-website",
+            "desc": {
+                "en": "The project that every web developer makes. A simple todo list app that stores the list in the browser localStorage. Styled with TailwindCSS",
+                "id": "Proyek yang dibuat setiap web developer. Aplikasi todo list sederhana yang menyimpan daftar pada localStorage browser. Styling menggunakan TailwindCSS"
+            },
+            "url": "/projects/todoList",
+            "githuburl": "https://github.com/misaalanshori/misaalanshori.github.io",
+            "blogpost": "",
+            "photos": [],
+            "projectlanguage": "Indonesian",
+            "languages": ["HTML", "Javascript"],
+            "techused": ["NodeJS", "NextJS", "ReactJS", "TailwindCSS", "Github Pages", "Github Actions"],
+            "tags": ["website","web development","nodejs","nextjs","reactjs", "tailwindcss", "todolist", "todo", "list"],
+            "datecreated": "4 Mei 2022",
+            "dateadded": "13 Mei 2022"
         }
     }
 }
