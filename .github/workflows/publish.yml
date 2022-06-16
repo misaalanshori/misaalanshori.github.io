@@ -35,6 +35,8 @@ jobs:
           mv $REPO-master $REPO
           rm master
 
+      
+
       - name: get node
         uses: actions/setup-node@v2
         with:
@@ -45,6 +47,11 @@ jobs:
 
       - name: Build
         run: npm run buildstatic # The build command of your project
+
+      - name: fix 404
+        run: |
+          mv out/404/index.html out/404.html
+          rm out/404 -r
         
       - name: touching .nojekyll
         run: touch out/.nojekyll

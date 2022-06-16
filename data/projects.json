@@ -17,7 +17,6 @@
 
     "featured":[
         "homepage",
-        "covid-id",
         "todoList"
     ],
     "projects":{
@@ -38,25 +37,6 @@
             "techused": ["NodeJS", "NextJS", "ReactJS", "TailwindCSS", "Github Pages", "Github Actions"],
             "tags": ["website","web development","nodejs","nextjs","reactjs", "tailwindcss", "about", "myself"],
             "datecreated": "6 November 2021",
-            "dateadded": "9 November 2021"
-        },
-        "covid-id": {
-            "title": "Covid-ID",
-            "key": "covid-id",
-            "type": "software-website",
-            "desc": {
-                "en": "Covid-ID is a website that shows some statistics about the Covid-19 pandemic. The original version of this website was written in pure PHP and used a combination of APIs and web scraping, it was poorly written which has caused it to break. This new version is made using the same modern frameworks and technology as my homepage and uses the official API from the Indonesian Goverment, which means it looks much better and also a lot more stable.",
-                "id": "Covid-ID adalah sebuah website yang menampilkan beberapa statistik mengenai pandemi Covid-19. Versi pertama dari website ini dibuat dengan PHP murni dan menggunakan kombinasi API dan juga webscraping, versi lama ini tidak dibuat dengan baik dan menyebabkannya untuk rusak. Versi baru ini dibuat dengan framework dan teknologi modern yang sama dengan homepage saya dan menggunakan API resmi dari pemerintah Indonesia, sehingga terlihat lebih bagus dan jauh lebih stabil"
-            },
-            "url": "/covid-id",
-            "githuburl": "https://github.com/misaalanshori/misaalanshori.github.io",
-            "blogpost": "",
-            "photos": [],
-            "projectlanguage": "Indonesian",
-            "languages": ["HTML", "Javascript"],
-            "techused": ["NodeJS", "NextJS", "ReactJS", "TailwindCSS", "Github Pages", "Github Actions"],
-            "tags": ["website","web development","nodejs","nextjs","reactjs", "tailwindcss", "covid", "health", "API"],
-            "datecreated": "8 November 2021",
             "dateadded": "9 November 2021"
         },
         "todoList": {
