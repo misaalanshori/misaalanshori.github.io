@@ -22,10 +22,6 @@ jobs:
       - name: Pulls submodules
         run: git submodule update --init --recursive
 
-      - name: make and get into projects folder
-        run: mkdir public/projects
-
-
       - name: get GDSC-Website-List-Movie
         run: |
           REPO=GDSC-Website-List-Movie
