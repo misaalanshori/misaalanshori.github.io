@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Embed Viewer</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <div id="igcontainer" style="display: flex; flex-direction: column;">
+        <h1>Usage: </h1>
+        <p>
+            <strong>Format:</strong> </br>
+            ?ids=igid1+igid2+igid3 </br>
+            <strong>For Example:</strong> </br>
+            <a target=”_blank”
+                href="?ids=CMXTX_6AX0g+CM-SVttJ8PF+CN0Euq3J7oC+COAxTcMpmI_+COvU-fgJWtw+CPIzg33pNmH+CQ88OXLpSyh">?ids=CMXTX_6AX0g+CM-SVttJ8PF+CN0Euq3J7oC+COAxTcMpmI_+COvU-fgJWtw+CPIzg33pNmH+CQ88OXLpSyh</a>
+            </br>
+            </br>
+            <strong>Description:</strong>
+            </br>
+            This page will display multiple embedded Instagram posts. Useful for viewing a series of Instagram posts that are
+            connected together.
+            </br>
+            </br>
+            <strong>Note:</strong>
+            </br>
+            Please don't judge how bad this looks, I tried to make this as quickly as possible. It's client side rendered with
+            vanilla JS in a single HTML file with almost no CSS, what did you expect?
+        </p>
+    </div>
+    <script>
+      query = new URLSearchParams(window.location.search);
+      ids = query.get("ids");
+      console.log("ids", ids);
+      if (ids) {
+        document.getElementById("igcontainer").innerHTML = ""
+        ids.split(" ").forEach((i) => {
+          console.log("render: ", i);
+          igitem = document.createElement("blockquote")
+          igitem.setAttribute("class", "instagram-media")
+          igitem.setAttribute("data-instgrm-captioned", "instagram-media")
+          igitem.setAttribute("data-instgrm-permalink", `https://www.instagram.com/p/${i}/`)
+          igitem.setAttribute("data-instgrm-version", "14")
+          document
+            .getElementById("igcontainer")
+            .appendChild(igitem);
+        });
+        igscript = document.createElement("script")
+        igscript.setAttribute("async", "")
+        igscript.setAttribute("src", "//www.instagram.com/embed.js");
+        document.body.appendChild(igscript);
+      }
+    </script>
+  </body>
+</html>
