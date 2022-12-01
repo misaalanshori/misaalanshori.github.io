@@ -6,8 +6,8 @@ on:
   push:
     branches:
       - main
-  schedule:
-      - cron: '43 */6 * * *' # every 6hr (+43min)
+#  schedule:
+    #  - cron: '43 */6 * * *' # every 6hr (+43min)
     # - cron: '43 */2 * * *' # every 2hr (+43min)
     # - cron:  '*/30 * * * *' # every 30 mins
 
