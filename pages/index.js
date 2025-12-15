@@ -54,7 +54,7 @@ export default function Home({featuredProjects, blogPinnedList}) {
         <div className="">
           <p className={`transition duration-1000 ease-in-out delay-100 transform ${hideComponents ? "-translate-y-48 opacity-0" : ""} text-gray-400 sm:text-xl lg:text-2xl`}>Hello! I am</p>
           <p className={`transition duration-1000 ease-in-out delay-150 transform ${hideComponents ? "-translate-y-48 opacity-0" : ""} text-2xl sm:text-4xl lg:text-7xl font-bold mb-1 text-gray-300 filter drop-shadow-2xl`}>Muhammad Isa Al Anshori</p>
-          <p className={`transition duration-1000 ease-in-out delay-200 transform ${hideComponents ? "-translate-y-48 opacity-0" : ""}  text-gray-400 sm:text-xl lg:text-2xl`}>Software Engineering Student</p>
+          <p className={`transition duration-1000 ease-in-out delay-200 transform ${hideComponents ? "-translate-y-48 opacity-0" : ""}  text-gray-400 sm:text-xl lg:text-2xl`}>Software Engineer - Telkom University Fresh Graduate (2025)</p>
           <TrackVisibility>
             <LinkButtons unhideDelay={0} url="https://github.com/misaalanshori" newtab="1" text="Github"/>
             <LinkButtons unhideDelay={50} url="https://www.linkedin.com/in/muhammad-isa-al-anshori-876ba5193" newtab="1" text="LinkedIn"/>
